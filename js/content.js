@@ -28,20 +28,21 @@ window.SITE = {
       descricao: "Clique em um projeto para ver detalhes, imagens e vídeos.",
       itens: [
         {
-          titulo: "Bullet heaven em Unity",
-          resumo: "Jogo de sobrevivência no estilo Vampire Survivors, feito em Unity com C#.",
-          descricao: ["Escreva aqui mais detalhes: o que você fez, desafios, o que aprendeu."],
-          tags: ["Unity", "C#", "Jogo 2D"],
+          titulo: "Work Harder",
+          resumo: "Um jogo Incrimental Sobre Carimbar Papelada!",
+          descricao: ["Esse jogo foi Realizada na FelpoJam, uma Game jam que teve como seu principal Host, Felps, Um grande Streamer Brasileiro.Por alguns dias, Eu estive responsável no Game Design, Na prototipação e Na Gestão da Equipe. Esse jogo Me ensinou Bastante sobre a utilização do Github para o versionamento do Projeto e Também como Trabalhar em conjunto com uma equipe em um prazo Curto!"],
+          tags: ["Godot", "GDscript", "2D"],
           destaque: true,
           midia: [
-            // { tipo: "gif", src: "assets/gifs/bullet-heaven.gif", legenda: "Gameplay" },
+             { tipo: "gif", src: "assets\gifs\WorkHarder-Menu.gif", legenda: "Main-Menu" },
+             { tipo: "video", src: "assets\videos\WorkHarder Gameplay.mp4", legenda: "gameplay" },
           ],
           links: [ /* { rotulo: "Código no GitHub", url: "https://github.com/..." } */ ]
         },
         {
           titulo: "Tower defense",
           resumo: "Jogo de tower defense desenvolvido na Unity 6.",
-          tags: ["Unity 6", "C#"], midia: [], links: []
+          tags: ["Unity", "C#"], midia: [], links: []
         },
         {
           titulo: "TaskFlow",
@@ -95,8 +96,8 @@ window.SITE = {
       tipo: "contato", titulo: "Contato",
       descricao: "Fale comigo por um destes canais.",
       itens: [
-        { rotulo: "LinkedIn", valor: "linkedin.com/in/seu-usuario", url: "https://www.linkedin.com/in/seu-usuario" },
-        { rotulo: "Gmail", valor: "seuemail@gmail.com", url: "mailto:seuemail@gmail.com" }
+        { rotulo: "LinkedIn", valor: "linkedin.com/in/seu-usuario", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
+        { rotulo: "Gmail", valor: "seuemail@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
         // , { rotulo: "GitHub", valor: "github.com/seu-usuario", url: "https://github.com/seu-usuario" }
       ]
     }
