@@ -34,8 +34,8 @@ window.SITE = {
           tags: ["Godot", "GDscript", "2D"],
           destaque: true,
           midia: [
-             //{ tipo: "gif", src: "assets\gifs\WorkHarder-Menu.gif", legenda: "Main-Menu" },
-             //{ tipo: "video", src: "assets\videos\WorkHarder Gameplay.mp4", legenda: "gameplay" },
+             { tipo: "gif", src: "assets\gifs\WorkHarder-Menu.gif", legenda: "Main-Menu" },
+             { tipo: "video", src: "assets\videos\WorkHarder Gameplay.mp4", legenda: "gameplay" },
           ],
           links: [ /* { rotulo: "Código no GitHub", url: "https://github.com/..." } */ ]
         },
