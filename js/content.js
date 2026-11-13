@@ -30,7 +30,7 @@ window.SITE = {
         {
           titulo: "Work Harder",
           resumo: "Um jogo Incrimental Sobre Carimbar Papelada!",
-          descricao: ["Esse jogo foi Realizada na FelpoJam, uma Game jam que teve como seu principal Host, Felps, Um grande Streamer Brasileiro.Por alguns dias, Eu estive responsável no Game Design, Na prototipação e Na Gestão da Equipe. Esse jogo Me ensinou Bastante sobre a utilização do Github para o versionamento do Projeto e Também como Trabalhar em conjunto com uma equipe em um prazo Curto!"],
+          descricao: ["Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado."],
           tags: ["Godot", "GDscript", "2D"],
           destaque: true,
           midia: [
@@ -42,9 +42,10 @@ window.SITE = {
         {
           titulo: "Prototípo de Jogo de Terror",
           resumo: "Um prototípo com sprites próprias e um sistema de diálogo simples",
-          descricao: ["Esse jogo foi feito para testar os meus conhecimentos que tinha adquirido estudando a Unity por 4 meses. O jogo tem um Meele attack simples que apesar de não ter um sprite, tem a mecânica inserida. Além disso, decidi fazer um sistema de diálogo simples para poder deixar o jogo mais imersivo, apesar de ter um estilo de arte mais simples, inspirado na arte de faith: Unholy trinity. O jogo apesar de ser majoritariamente monócrómatico, objetos e pessoas importantes para o jogo tem cores únicas para se destacarem com o cenário!  "],
-          tags: ["Unity", "C#", "2D"], midia: [
-            { tipo: "imagem", src: "assets/images/Horror-UnityView.png", legenda: "Game Unity Mode" },], 
+          descricao: ["Este jogo foi desenvolvido com o objetivo de colocar em prática os conhecimentos que adquiri após quatro meses estudando a Unity. O projeto conta com um sistema simples de ataque corpo a corpo (melee attack). Além disso, decidi implementar um sistema de diálogos para tornar a experiência mais imersiva. Apesar de possuir um estilo artístico minimalista, inspirado em FAITH: The Unholy Trinity, o jogo utiliza uma paleta predominantemente monocromática. Objetos e personagens importantes para a narrativa recebem cores próprias, permitindo que se destaquem visualmente em meio ao cenário. Uma das minhas maiores conquistas durante o desenvolvimento foi aprender a trabalhar com Shaders e efeitos de pós-processamento para reproduzir a estética de televisores antigos (CRT). Utilizei Shaders para recriar efeitos como as Scanlines, características das antigas televisões, contribuindo para transmitir ao jogo uma identidade visual retrô."],
+          tags: ["Unity", "C#", "2D", "Shaders"], midia: [
+            { tipo: "imagem", src: "assets/images/Horror-UnityView.png", legenda: "Game Unity Mode" }, 
+            { tipo: "video", src: "assets/videos/Gameplay-Horror.mp4", legenda: "Gameplay" },], 
             links: []
         },
         {
