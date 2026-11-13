@@ -41,8 +41,11 @@ window.SITE = {
         },
         {
           titulo: "Prototípo de Jogo de Terror",
-          resumo: "Jogo de tower defense desenvolvido na Unity 6.",
-          tags: ["Unity", "C#", "2D"], midia: [], links: []
+          resumo: "Um prototípo com sprites próprias e um sistema de diálogo simples",
+          descricao: ["Esse jogo foi feito para testar os meus conhecimentos que tinha adquirido estudando a Unity por 4 meses. O jogo tem um Meele attack simples que apesar de não ter um sprite, tem a mecânica inserida. Além disso, decidi fazer um sistema de diálogo simples para poder deixar o jogo mais imersivo, apesar de ter um estilo de arte mais simples, inspirado na arte de faith: Unholy trinity. O jogo apesar de ser majoritariamente monócrómatico, objetos e pessoas importantes para o jogo tem cores únicas para se destacarem com o cenário!  "],
+          tags: ["Unity", "C#", "2D"], midia: [
+            { tipo: "imagem", src: "assets/images/Horror-UnityView.png", legenda: "Game Unity Mode" },], 
+            links: []
         },
         {
           titulo: "TaskFlow",
