@@ -34,7 +34,7 @@ window.SITE = {
           tags: ["Godot", "GDscript", "2D"],
           destaque: true,
           midia: [
-             { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Main-Menu" },
+             { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Menu" },
              { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
           links: [ { rotulo: "Página da Itch.io", url: "https://gozinga.itch.io/work-harder" } ]
@@ -49,9 +49,13 @@ window.SITE = {
             links: []
         },
         {
-          titulo: "TaskFlow",
-          resumo: "Gerenciador de tarefas em React feito em equipe na faculdade. Atuei no estado global com Context API.",
-          tags: ["React", "JavaScript", "CSS"], midia: [], links: []
+          titulo: "Limpar",
+          resumo: "Um jogo de terror onde tem que coletar peças para um robô!",
+          descricao: ["Este jogo foi desenvolvido para a **Scream Jam**, alcançando o 26º lugar na categoria Criatividade. Além disso, entre 930 jogos participantes, conquistamos a 316ª posição no ranking geral. Como reconhecimento adicional, um dos participantes da Jam chegou a gravar um vídeo jogando nosso jogo e publicá-lo no YouTube! Durante o desenvolvimento, fui responsável pelo **Game Design, pela prototipação, pelo Level Design, pela criação dos sprites e por parte do Sound Design**. Essa experiência me ensinou sobre a complexidade de gerenciar uma equipe com um prazo limitado, além de reforçar a importância de um bom Level Design para garantir que o jogador consiga navegar pelo ambiente sem se perder ou se frustrar durante a experiência."],
+          tags: ["Godot", "GDscript", "2D"], midia: [
+            { tipo: "gif", src: "assets/gifs/Limpar cutscene.gif", legenda: "Cutscene" }, 
+            
+          ], links: [{ rotulo: "Página da Itch.io", url: "https://gozinga.itch.io/limpar" }]
         },
         {
           titulo: "Editor de imagens com IA",
