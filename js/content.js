@@ -96,8 +96,8 @@ window.SITE = {
       tipo: "contato", titulo: "Contato",
       descricao: "Interessado? Fale comigo por um destes canais!",
       itens: [
-        { rotulo: "LinkedIn", valor: "linkedin.com/in/seu-usuario", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
-        { rotulo: "Gmail", valor: "seuemail@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
+        { rotulo: "LinkedIn", valor: "linkedin.com/in/arthur-carneiro-maciel", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
+        { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
         // , { rotulo: "GitHub", valor: "github.com/seu-usuario", url: "https://github.com/seu-usuario" }
       ]
     }
