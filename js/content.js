@@ -37,12 +37,12 @@ window.SITE = {
              { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Main-Menu" },
              { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
-          links: [ /* { rotulo: "Código no GitHub", url: "https://github.com/..." } */ ]
+          links: [ { rotulo: "Página da Itch.io", url: "https://gozinga.itch.io/work-harder" } ]
         },
         {
-          titulo: "Tower defense",
+          titulo: "Prototípo de Jogo de Terror",
           resumo: "Jogo de tower defense desenvolvido na Unity 6.",
-          tags: ["Unity", "C#"], midia: [], links: []
+          tags: ["Unity", "C#", "2D"], midia: [], links: []
         },
         {
           titulo: "TaskFlow",
@@ -66,13 +66,13 @@ window.SITE = {
       descricao: "Em destaque, onde tenho mais facilidade.",
       grupos: [
         { nome: "Linguagens", itens: [
-          { nome: "C#", forte: true, nota: "uso na Unity" }, "Java", "Python" ] },
+          { nome: "C#", forte: true, nota: "" }, "Java", "Python" ] },
         { nome: "Front-end", itens: [
           { nome: "HTML", nota: "básico" }, { nome: "CSS", nota: "básico" }, { nome: "JavaScript", nota: "básico" },
           "React", "Node.js", "npm" ] },
         { nome: "Engines de jogos", itens: [
           { nome: "Unity", forte: true }, { nome: "Godot", forte: true }, "Unreal Engine 5",
-          { nome: "Game Maker Studio 2", nota: "minha primeira, aos 12 anos" } ] },
+          { nome: "Game Maker Studio 2", nota: "" } ] },
         { nome: "IDEs", itens: [ "VS Code", "Visual Studio", "IntelliJ" ] }
       ]
     },
@@ -94,7 +94,7 @@ window.SITE = {
 
     {
       tipo: "contato", titulo: "Contato",
-      descricao: "Fale comigo por um destes canais.",
+      descricao: "Interessado? Fale comigo por um destes canais!",
       itens: [
         { rotulo: "LinkedIn", valor: "linkedin.com/in/seu-usuario", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
         { rotulo: "Gmail", valor: "seuemail@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
