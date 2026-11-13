@@ -35,7 +35,7 @@ window.SITE = {
           destaque: true,
           midia: [
              { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Main-Menu" },
-             { tipo: "video", src: "assets/videos/WorkHarder Gameplay.mp4", legenda: "gameplay" },
+             { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
           links: [ /* { rotulo: "Código no GitHub", url: "https://github.com/..." } */ ]
         },
