@@ -115,7 +115,7 @@
       h("section", { class: "hero wrap" }, fotoBox,
         h("div", { class: "hero__txt" }, h("h1", { text: P.nome }), h("p", { class: "hero__funcao", text: L(P.funcao) }),
           h("h2", { class: "hero__sobre", text: u("sobre") }), list(P.sobre).map((t) => h("p", { text: t })))),
-      secoes.map((s) => h("section", { class: "secao wrap", id: s.id, "aria-labelledby": s.id + "-t" },
+      ...secoes.map((s) => h("section", { class: "secao wrap", id: s.id, "aria-labelledby": s.id + "-t" },
         h("div", { class: "secao__cab" }, h("h2", { id: s.id + "-t", text: L(s.titulo) }), s.descricao && h("p", { text: L(s.descricao) })),
         h("div", { class: "secao__corpo" }, R[s.tipo](s)))));
 
