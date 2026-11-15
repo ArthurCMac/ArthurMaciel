@@ -107,3 +107,6 @@ h1{font-size:clamp(2.6rem,7.2vw,5.6rem);font-weight:800}
 
 .rodape{padding-block:2.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 .rodape p{margin:0}
+
+.acoes{display:flex;gap:.5rem}
+#menu{min-width:0}

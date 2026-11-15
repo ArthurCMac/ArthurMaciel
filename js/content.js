@@ -1,113 +1,132 @@
 /* ============================================================
    CONTEÚDO DO SITE: edite só este arquivo.
-   - Para adicionar algo, copie um bloco { ... } e cole abaixo.
-   - Para reordenar seções, mude a ordem dentro de "secoes".
-   - Mídia (fotos, GIFs, vídeos) vai nas pastas assets/.
-   Tipos de mídia aceitos:
-     { tipo: "imagem",  src: "assets/images/foto.png", legenda: "..." }
-     { tipo: "gif",     src: "assets/gifs/gameplay.gif" }
-     { tipo: "video",   src: "assets/videos/demo.mp4" }
-     { tipo: "youtube", id: "ID_DO_VIDEO" }
+   IDIOMAS: qualquer texto pode ser uma string simples (igual nos
+   dois idiomas) ou um par { pt: "...", en: "..." }.
+   Listas de parágrafos aceitam um par por item ou um par inteiro:
+     descricao: { pt: ["p1", "p2"], en: ["p1", "p2"] }
+   Se faltar o "en", o site mostra o texto em português.
    ============================================================ */
 window.SITE = {
-  meta: { titulo: "Arthur Carneiro Maciel | Portfólio" },
+  meta: { titulo: { pt: "Arthur Carneiro Maciel | Portfólio", en: "Arthur Carneiro Maciel | Portfolio" } },
+
+  /* Textos fixos da interface */
+  ui: {
+    sobre: { pt: "Sobre mim", en: "About me" },
+    fechar: { pt: "Fechar", en: "Close" },
+    naoEncontrado: { pt: "Arquivo não encontrado", en: "File not found" },
+    andamento: { pt: "Em andamento", en: "In progress" },
+    fotoDe: { pt: "Foto de ", en: "Photo of " },
+    secoes: { pt: "Seções", en: "Sections" },
+    video: { pt: "Vídeo", en: "Video" },
+    temaEscuro: { pt: "Tema escuro", en: "Dark theme" },
+    temaClaro: { pt: "Tema claro", en: "Light theme" },
+    outroIdioma: { pt: "English", en: "Português" }
+  },
 
   perfil: {
     nome: "Arthur Carneiro Maciel",
-    funcao: "Desenvolvedor de jogos e estudante de Ciência da Computação",
+    funcao: { pt: "Desenvolvedor de jogos e estudante de Ciência da Computação", en: "Game developer and Computer Science student" },
     foto: "assets/images/foto.jpg", // coloque sua foto aqui
     sobre: [
-      "Comecei a fazer jogos aos 12 anos, no Game Maker Studio 2. Hoje estudo Ciência da Computação na Uniesp e trabalho principalmente com Unity e C#.",
-      "Também desenvolvo front-end com React e Node.js, e gosto de levar cada projeto do protótipo até algo jogável ou utilizável."
+      { pt: "Comecei a fazer jogos aos 12 anos, no Game Maker Studio 2. Hoje estudo Ciência da Computação na Uniesp e trabalho principalmente com Unity e C#.",
+        en: "I started making games at 12, with Game Maker Studio 2. Today I study Computer Science at Uniesp and work mainly with Unity and C#." },
+      { pt: "Também desenvolvo front-end com React e Node.js, e gosto de levar cada projeto do protótipo até algo jogável ou utilizável.",
+        en: "I also build front-end with React and Node.js, and I like taking each project from prototype to something playable or usable." }
     ]
   },
 
   secoes: [
     {
-      tipo: "projetos", titulo: "Projetos",
-      descricao: "Clique em um projeto para ver detalhes, imagens e vídeos.",
+      tipo: "projetos",
+      titulo: { pt: "Projetos", en: "Projects" },
+      descricao: { pt: "Clique em um projeto para ver detalhes, imagens e vídeos.", en: "Click a project to see details, images and videos." },
       itens: [
         {
           titulo: "Work Harder",
-          resumo: "Um jogo Incrimental Sobre Carimbar Papelada!",
-          descricao: ["Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado."],
+          resumo: { pt: "Um jogo incremental sobre carimbar papelada!", en: "An incremental game about stamping paperwork!" },
+          descricao: [{
+            pt: "Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado.",
+            en: "This game was made during FelpoJam, a game jam hosted mainly by Felps, a well-known Brazilian streamer. During the event, I was responsible for game design, prototyping and team management. The experience taught me a lot about using GitHub for version control, and gave me valuable lessons in collaboration and teamwork under a tight deadline."
+          }],
           tags: ["Godot", "GDscript", "2D"],
           destaque: true,
           midia: [
-             { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Menu" },
-             { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
+            { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Menu" },
+            { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
-          links: [ { rotulo: "Página da Itch.io", url: "https://gozinga.itch.io/work-harder" } ]
+          links: [{ rotulo: { pt: "Página da Itch.io", en: "Itch.io page" }, url: "https://gozinga.itch.io/work-harder" }]
         },
         {
-          titulo: "Prototípo de Jogo de Terror",
-          resumo: "Um prototípo com sprites próprias e um sistema de diálogo simples",
-          descricao: ["Este jogo foi desenvolvido com o objetivo de colocar em prática os conhecimentos que adquiri após quatro meses estudando a Unity. O projeto conta com um sistema simples de ataque corpo a corpo (melee attack). Além disso, decidi implementar um sistema de diálogos para tornar a experiência mais imersiva. Apesar de possuir um estilo artístico minimalista, inspirado em FAITH: The Unholy Trinity, o jogo utiliza uma paleta predominantemente monocromática. Objetos e personagens importantes para a narrativa recebem cores próprias, permitindo que se destaquem visualmente em meio ao cenário. Uma das minhas maiores conquistas durante o desenvolvimento foi aprender a trabalhar com Shaders e efeitos de pós-processamento para reproduzir a estética de televisores antigos (CRT). Utilizei Shaders para recriar efeitos como as Scanlines, características das antigas televisões, contribuindo para transmitir ao jogo uma identidade visual retrô."],
-          tags: ["Unity", "C#", "2D", "Shaders"], midia: [
-            { tipo: "imagem", src: "assets/images/Horror-UnityView.png", legenda: "Game Unity Mode" }, 
-            { tipo: "video", src: "assets/videos/Gameplay-Horror.mp4", legenda: "Gameplay" },], 
-            links: []
+          titulo: { pt: "Protótipo de Jogo de Terror", en: "Horror Game Prototype" },
+          resumo: { pt: "Um protótipo com sprites próprias e um sistema de diálogo simples", en: "A prototype with original sprites and a simple dialogue system" },
+          descricao: [{
+            pt: "Este jogo foi desenvolvido com o objetivo de colocar em prática os conhecimentos que adquiri após quatro meses estudando a Unity. O projeto conta com um sistema simples de ataque corpo a corpo (melee attack). Além disso, decidi implementar um sistema de diálogos para tornar a experiência mais imersiva. Apesar de possuir um estilo artístico minimalista, inspirado em FAITH: The Unholy Trinity, o jogo utiliza uma paleta predominantemente monocromática. Objetos e personagens importantes para a narrativa recebem cores próprias, permitindo que se destaquem visualmente em meio ao cenário. Uma das minhas maiores conquistas durante o desenvolvimento foi aprender a trabalhar com Shaders e efeitos de pós-processamento para reproduzir a estética de televisores antigos (CRT). Utilizei Shaders para recriar efeitos como as Scanlines, características das antigas televisões, contribuindo para transmitir ao jogo uma identidade visual retrô.",
+            en: "I built this game to put into practice what I learned after four months studying Unity. It has a simple melee attack system, and I added a dialogue system to make the experience more immersive. Although the art style is minimalist and inspired by FAITH: The Unholy Trinity, the game uses a mostly monochrome palette. Objects and characters that matter to the story get their own colors, so they stand out against the scenery. One of my biggest achievements during development was learning to work with shaders and post-processing effects to reproduce the look of old CRT televisions. I used shaders to recreate effects such as scanlines, giving the game a retro visual identity."
+          }],
+          tags: ["Unity", "C#", "2D", "Shaders"],
+          midia: [
+            { tipo: "imagem", src: "assets/images/Horror-UnityView.png", legenda: { pt: "Game Unity Mode", en: "Unity editor view" } },
+            { tipo: "video", src: "assets/videos/Gameplay-Horror.mp4", legenda: "Gameplay" },
+          ],
+          links: []
         },
         {
           titulo: "Limpar",
-          resumo: "Um jogo de terror onde tem que coletar peças para um robô!",
-          descricao: ["Este jogo foi desenvolvido para a Scream Jam, alcançando o 26º lugar na categoria Criatividade. Além disso, entre 930 jogos participantes, conquistamos a 316ª posição no ranking geral. Como reconhecimento adicional, um dos participantes da Jam chegou a gravar um vídeo jogando nosso jogo e publicá-lo no YouTube! Durante o desenvolvimento, fui responsável pelo Game Design, pela prototipação, pelo Level Design, pela criação dos sprites e por parte do Sound Design. Essa experiência me ensinou sobre a complexidade de gerenciar uma equipe com um prazo limitado, além de reforçar a importância de um bom Level Design para garantir que o jogador consiga navegar pelo ambiente sem se perder ou se frustrar durante a experiência."],
-          tags: ["Godot", "GDscript", "2D"], midia: [
+          resumo: { pt: "Um jogo de terror onde tem que coletar peças para um robô!", en: "A horror game where you collect parts for a robot!" },
+          descricao: [{
+            pt: "Este jogo foi desenvolvido para a Scream Jam, alcançando o 26º lugar na categoria Criatividade. Além disso, entre 930 jogos participantes, conquistamos a 316ª posição no ranking geral. Como reconhecimento adicional, um dos participantes da Jam chegou a gravar um vídeo jogando nosso jogo e publicá-lo no YouTube! Durante o desenvolvimento, fui responsável pelo Game Design, pela prototipação, pelo Level Design, pela criação dos sprites e por parte do Sound Design. Essa experiência me ensinou sobre a complexidade de gerenciar uma equipe com um prazo limitado, além de reforçar a importância de um bom Level Design para garantir que o jogador consiga navegar pelo ambiente sem se perder ou se frustrar durante a experiência.",
+            en: "This game was made for Scream Jam, placing 26th in the Creativity category. Out of 930 participating games, we ranked 316th overall. As an extra recognition, one of the jam participants even recorded a video playing our game and posted it on YouTube! During development, I was responsible for game design, prototyping, level design, sprite creation and part of the sound design. The experience taught me about the complexity of managing a team on a tight deadline, and reinforced how important good level design is so players can navigate the environment without getting lost or frustrated."
+          }],
+          tags: ["Godot", "GDscript", "2D"],
+          midia: [
             { tipo: "gif", src: "assets/gifs/Limpar cutscene.gif", legenda: "Cutscene" },
-            { tipo: "video", src: "assets/videos/LimparGameplay.mp4", legenda: "Gameplay" },  
-            
-          ], links: [{ rotulo: "Página da Itch.io", url: "https://gozinga.itch.io/limpar" }]
+            { tipo: "video", src: "assets/videos/LimparGameplay.mp4", legenda: "Gameplay" },
+          ],
+          links: [{ rotulo: { pt: "Página da Itch.io", en: "Itch.io page" }, url: "https://gozinga.itch.io/limpar" }]
         },
         {
-          titulo: "Editor de imagens com IA",
-          resumo: "Editor de imagens no estilo Photoshop com geração de imagens por IA, desenvolvido em equipe.",
+          titulo: { pt: "Editor de imagens com IA", en: "AI Image Editor" },
+          resumo: { pt: "Editor de imagens no estilo Photoshop com geração de imagens por IA, desenvolvido em equipe.", en: "Photoshop-style image editor with AI image generation, built as a team." },
           tags: ["React", "Node.js", "JavaScript"], midia: [], links: []
         },
         {
           titulo: "API Voll Bank",
-          resumo: "API REST em Java com Spring Boot, arquitetura em camadas, JPA e validações.",
+          resumo: { pt: "API REST em Java com Spring Boot, arquitetura em camadas, JPA e validações.", en: "REST API in Java with Spring Boot, layered architecture, JPA and validation." },
           tags: ["Java", "Spring Boot", "SQL Server"], midia: [], links: []
         }
       ]
     },
     {
-      tipo: "habilidades", titulo: "Linguagens e ferramentas",
-      descricao: "Em destaque, onde tenho mais facilidade.",
+      tipo: "habilidades",
+      titulo: { pt: "Linguagens e ferramentas", en: "Languages and tools" },
+      descricao: { pt: "Em destaque, onde tenho mais facilidade.", en: "Highlighted: where I am most comfortable." },
       grupos: [
-        { nome: "Linguagens", itens: [
-          { nome: "C#", forte: true, nota: "" }, "Java", "Python" ] },
+        { nome: { pt: "Linguagens", en: "Languages" }, itens: [
+          { nome: "C#", forte: true }, "Java", "Python" ] },
         { nome: "Front-end", itens: [
-          { nome: "HTML", nota: "básico" }, { nome: "CSS", nota: "básico" }, { nome: "JavaScript", nota: "básico" },
+          { nome: "HTML", nota: { pt: "básico", en: "basic" } }, { nome: "CSS", nota: { pt: "básico", en: "basic" } }, { nome: "JavaScript", nota: { pt: "básico", en: "basic" } },
           "React", "Node.js", "npm" ] },
-        { nome: "Engines de jogos", itens: [
-          { nome: "Unity", forte: true }, { nome: "Godot", forte: true }, "Unreal Engine 5",
-          { nome: "Game Maker Studio 2", nota: "" } ] },
+        { nome: { pt: "Engines de jogos", en: "Game engines" }, itens: [
+          { nome: "Unity", forte: true }, { nome: "Godot", forte: true }, "Unreal Engine 5", "Game Maker Studio 2" ] },
         { nome: "IDEs", itens: [ "VS Code", "Visual Studio", "IntelliJ" ] }
       ]
     },
     {
-      tipo: "educacao", titulo: "Educação",
+      tipo: "educacao",
+      titulo: { pt: "Educação", en: "Education" },
       itens: [
-        { instituicao: "Motiva", curso: "Colégio" },
-        { instituicao: "Uniesp", curso: "Ciência da Computação", atual: true }
-        // campos opcionais: periodo: "2020 a 2023", descricao: "...", midia: [ ... ]
+        { instituicao: "Motiva", curso: { pt: "Colégio", en: "School" } },
+        { instituicao: "Uniesp", curso: { pt: "Ciência da Computação", en: "Computer Science" }, atual: true }
+        // campos opcionais: periodo: "2020 a 2023", descricao: { pt: "...", en: "..." }, midia: [ ... ]
       ]
     },
-
-    /* EXEMPLOS DE SEÇÕES EXTRAS (tire os comentários para usar):
-    { tipo: "texto", titulo: "Mais sobre mim", texto: ["Parágrafo 1", "Parágrafo 2"],
-      midia: [ { tipo: "imagem", src: "assets/images/eu.jpg" } ] },
-    { tipo: "galeria", titulo: "Galeria", midia: [
-      { tipo: "gif", src: "assets/gifs/a.gif" }, { tipo: "youtube", id: "ID_DO_VIDEO" } ] },
-    */
-
     {
-      tipo: "contato", titulo: "Contato",
-      descricao: "Interessado? Fale comigo por um destes canais!",
+      tipo: "contato",
+      titulo: { pt: "Contato", en: "Contact" },
+      descricao: { pt: "Interessado? Fale comigo por um destes canais!", en: "Interested? Get in touch through any of these channels!" },
       itens: [
         { rotulo: "LinkedIn", valor: "linkedin.com/in/arthur-carneiro-maciel", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
         { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
-        // , { rotulo: "GitHub", valor: "github.com/seu-usuario", url: "https://github.com/seu-usuario" }
       ]
     }
   ]
