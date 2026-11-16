@@ -84,16 +84,7 @@ window.SITE = {
           ],
           links: [{ rotulo: { pt: "Página da Itch.io", en: "Itch.io page" }, url: "https://gozinga.itch.io/limpar" }]
         },
-        {
-          titulo: { pt: "Editor de imagens com IA", en: "AI Image Editor" },
-          resumo: { pt: "Editor de imagens no estilo Photoshop com geração de imagens por IA, desenvolvido em equipe.", en: "Photoshop-style image editor with AI image generation, built as a team." },
-          tags: ["React", "Node.js", "JavaScript"], midia: [], links: []
-        },
-        {
-          titulo: "API Voll Bank",
-          resumo: { pt: "API REST em Java com Spring Boot, arquitetura em camadas, JPA e validações.", en: "REST API in Java with Spring Boot, layered architecture, JPA and validation." },
-          tags: ["Java", "Spring Boot", "SQL Server"], midia: [], links: []
-        }
+        
       ]
     },
     {
