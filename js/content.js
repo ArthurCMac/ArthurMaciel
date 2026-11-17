@@ -26,7 +26,7 @@ window.SITE = {
   perfil: {
     nome: "Arthur Carneiro Maciel",
     funcao: { pt: "Desenvolvedor de jogos e estudante de Ciência da Computação", en: "Game developer and Computer Science student" },
-    foto: "assets/images/foto.jpg", // coloque sua foto aqui
+    foto: "assets/images/photo.png", // coloque sua foto aqui
     sobre: [
       { pt: "Comecei a fazer jogos aos 12 anos, no Game Maker Studio 2. Hoje estudo Ciência da Computação na Uniesp e trabalho principalmente com Unity e C#.",
         en: "I started making games at 12, with Game Maker Studio 2. Today I study Computer Science at Uniesp and work mainly with Unity and C#." },
