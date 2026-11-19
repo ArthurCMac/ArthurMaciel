@@ -28,10 +28,10 @@ window.SITE = {
     funcao: { pt: "Desenvolvedor de jogos e estudante de Ciência da Computação", en: "Game developer and Computer Science student" },
     foto: "assets/images/photo.png", // coloque sua foto aqui
     sobre: [
-      { pt: "Comecei a fazer jogos aos 12 anos, no Game Maker Studio 2. Hoje estudo Ciência da Computação na Uniesp e trabalho principalmente com Unity e C#.",
-        en: "I started making games at 12, with Game Maker Studio 2. Today I study Computer Science at Uniesp and work mainly with Unity and C#." },
-      { pt: "Também desenvolvo front-end com React e Node.js, e gosto de levar cada projeto do protótipo até algo jogável ou utilizável.",
-        en: "I also build front-end with React and Node.js, and I like taking each project from prototype to something playable or usable." }
+      { pt: "Sou estudante de Ciência da Computação na UNIESP e busco uma oportunidade de estágio em desenvolvimento de jogos. Desenvolvo projetos com Unity/C# e Godot, com participação em game jams e experiências de colaboração em equipe.",
+        en: "I am a Computer Science student at UNIESP seeking an internship opportunity in game development. I develop projects using Unity/C# and Godot, with experience participating in game jams and collaborating in team environments." },
+      { pt: "Comecei a criar jogos aos 12 anos e venho aprofundando meus conhecimentos por meio de projetos práticos.",
+        en: "I started creating games at the age of 12 and have been continuously expanding my knowledge through hands-on projects." }
     ]
   },
 
@@ -118,6 +118,7 @@ window.SITE = {
       itens: [
         { rotulo: "LinkedIn", valor: "linkedin.com/in/arthur-carneiro-maciel", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
         { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
+        { rotulo: "Celular", valor: "+55 (83) 9 9344-6500", url: "tel:+5583993446500" }
       ]
     }
   ]
