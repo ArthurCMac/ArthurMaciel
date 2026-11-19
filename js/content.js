@@ -117,7 +117,7 @@ window.SITE = {
       descricao: { pt: "Interessado? Fale comigo por um destes canais!", en: "Interested? Get in touch through any of these channels!" },
       itens: [
         { rotulo: "LinkedIn", valor: "linkedin.com/in/arthur-carneiro-maciel", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
-        { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" }
+        { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" },
         { rotulo: "Celular", valor: "+55 (83) 9 9344-6500", url: "tel:+5583993446500" }
       ]
     }
