@@ -134,9 +134,9 @@ window.SITE = {
         {
           titulo: "Limpar",
           resumo: { pt: "Um jogo de terror onde tem que coletar peças para um robô!", en: "A horror game where you collect parts for a robot!" },
-          selo: { pt: "26º em Criatividade · Scream Jam", en: "26th in Creativity · Scream Jam" },
+          selo: { pt: "26º em Criatividade · Scream Jam · 7 dias", en: "26th in Creativity · Scream Jam · 7 days" },
           fatos: [
-            { pt: "Scream Jam", en: "Scream Jam" },
+            { pt: "Scream Jam · 7 dias", en: "Scream Jam · 7 days" },
             { pt: "316º lugar geral entre 930 jogos", en: "316th overall out of 930 games" }
           ],
           contexto: {
