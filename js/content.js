@@ -5,6 +5,11 @@
    Listas de parágrafos aceitam um par por item ou um par inteiro:
      descricao: { pt: ["p1", "p2"], en: ["p1", "p2"] }
    Se faltar o "en", o site mostra o texto em português.
+
+   CAMPOS DE UM PROJETO (todos opcionais, exceto titulo e resumo):
+     selo, fatos[], links[], notas[], contexto, papel[], equipe[],
+     desafio, resultado, aprendizados[], midia[], tags[]
+   Sem nenhum dos campos de texto detalhado, usa-se "descricao".
    ============================================================ */
 window.SITE = {
   meta: { titulo: { pt: "Arthur Carneiro Maciel | Portfólio", en: "Arthur Carneiro Maciel | Portfolio" } },
@@ -20,18 +25,46 @@ window.SITE = {
     video: { pt: "Vídeo", en: "Video" },
     temaEscuro: { pt: "Tema escuro", en: "Dark theme" },
     temaClaro: { pt: "Tema claro", en: "Light theme" },
-    outroIdioma: { pt: "English", en: "Português" }
+    outroIdioma: { pt: "English", en: "Português" },
+    apelido: { pt: "Meu perfil no {plataforma}: ", en: "My {plataforma} profile: " },
+    contexto: { pt: "Contexto", en: "Context" },
+    papel: { pt: "Minha participação", en: "My contribution" },
+    equipe: { pt: "Contribuição da equipe", en: "Team contribution" },
+    desafio: { pt: "Desafio e solução", en: "Challenge and solution" },
+    resultado: { pt: "Resultado", en: "Result" },
+    aprendizados: { pt: "Aprendizados", en: "Lessons learned" }
   },
 
   perfil: {
     nome: "Arthur Carneiro Maciel",
     funcao: { pt: "Desenvolvedor de jogos e estudante de Ciência da Computação", en: "Game developer and Computer Science student" },
+    objetivo: {
+      pt: "Busco estágio em desenvolvimento de jogos, com foco em Game Design e programação.",
+      en: "Seeking an internship in game development, focused on game design and programming."
+    },
     foto: "assets/images/photo.png", // coloque sua foto aqui
     sobre: [
       { pt: "Sou estudante de Ciência da Computação na UNIESP e busco uma oportunidade de estágio em desenvolvimento de jogos. Desenvolvo projetos com Unity/C# e Godot, com participação em game jams e experiências de colaboração em equipe.",
         en: "I am a Computer Science student at UNIESP seeking an internship opportunity in game development. I develop projects using Unity/C# and Godot, with experience participating in game jams and collaborating in team environments." },
       { pt: "Comecei a criar jogos aos 12 anos e venho aprofundando meus conhecimentos por meio de projetos práticos.",
         en: "I started creating games at the age of 12 and have been continuously expanding my knowledge through hands-on projects." }
+    ],
+    /* Dados para triagem de estágio. Tire os // e preencha o que fizer sentido: */
+    infos: [
+      // { rotulo: { pt: "Cidade", en: "Location" }, valor: "Cidade, UF" },
+      // { rotulo: { pt: "Modalidade", en: "Work mode" }, valor: { pt: "Presencial, híbrido ou remoto", en: "On-site, hybrid or remote" } },
+      // { rotulo: { pt: "Disponibilidade", en: "Availability" }, valor: { pt: "Meio período, a partir de ...", en: "Part-time, from ..." } },
+    ],
+    /* Botões da abertura. O currículo precisa estar em assets/docs/curriculo.pdf */
+    acoes: [
+      { rotulo: { pt: "Ver projetos", en: "View projects" }, url: "#projetos", principal: true },
+      { rotulo: { pt: "Currículo (PDF)", en: "Resume (PDF)" }, url: "assets/docs/curriculo.pdf", download: true },
+      { rotulo: "GitHub", url: "https://github.com/arthurcmac" },
+      { rotulo: { pt: "Contato", en: "Contact" }, url: "#contato" }
+    ],
+    /* Liga seus nomes de usuário ao seu nome profissional */
+    apelidos: [
+      { plataforma: "itch.io", nome: "Gozinga", url: "https://gozinga.itch.io" }
     ]
   },
 
@@ -39,22 +72,50 @@ window.SITE = {
     {
       tipo: "projetos",
       titulo: { pt: "Projetos", en: "Projects" },
-      descricao: { pt: "Clique em um projeto para ver detalhes, imagens e vídeos.", en: "Click a project to see details, images and videos." },
+      descricao: { pt: "Clique em um projeto para ver minha participação, os desafios e o resultado.", en: "Click a project to see my contribution, the challenges and the result." },
       itens: [
         {
           titulo: "Work Harder",
-          resumo: { pt: "Um jogo incremental sobre carimbar papelada!", en: "An incremental game about stamping paperwork!" },
-          descricao: [{
-            pt: "Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado.",
-            en: "This game was made during FelpoJam, a game jam hosted mainly by Felps, a well-known Brazilian streamer. During the event, I was responsible for game design, prototyping and team management. The experience taught me a lot about using GitHub for version control, and gave me valuable lessons in collaboration and teamwork under a tight deadline."
-          }],
-          tags: ["Godot", "GDscript", "2D"],
+          resumo: { pt: "Um jogo incremental sobre carimbar papelada, feito em 11 dias na FelpoJam.", en: "An incremental game about stamping paperwork, made in 11 days for FelpoJam." },
+          selo: { pt: "FelpoJam · 11 dias", en: "FelpoJam · 11 days" },
+          fatos: [
+            { pt: "Game jam com o streamer Felps como principal host", en: "Game jam hosted mainly by the streamer Felps" },
+            { pt: "Equipe de 4 pessoas", en: "Team of 4" }
+          ],
+          contexto: {
+            pt: "Jogo desenvolvido durante a FelpoJam, uma game jam que teve o streamer brasileiro Felps como principal host. O prazo foi de 11 dias, com uma equipe de 4 pessoas.",
+            en: "Made during FelpoJam, a game jam hosted mainly by the Brazilian streamer Felps. We had 11 days and a team of 4 people."
+          },
+          papel: [
+            { pt: "Game Design e gestão da equipe.", en: "Game design and team management." },
+            { pt: "Criei a mecânica base do clicker.", en: "I built the core clicker mechanic." },
+            { pt: "Criei a base do sistema de upgrades, ou seja, fiz o protótipo do jogo, que depois foi polido por um colega.", en: "I built the foundation of the upgrade system, which means I made the game's prototype, later polished by a teammate." }
+          ],
+          equipe: [
+            { pt: "Um colega de programação melhorou o sistema de upgrades, adicionou mais conteúdo e fez a cutscene.", en: "A programming teammate improved the upgrade system, added more content and made the cutscene." },
+            { pt: "Os outros dois membros fizeram a arte (carimbo, animação do player e sprites do papel) e a música.", en: "The other two members made the art (stamp, player animation and paper sprites) and the music." }
+          ],
+          desafio: {
+            pt: "O jogo era simples e quase sem dificuldade técnica, então o desafio foi manter o escopo pequeno e deixar espaço para polimento. Usei o que aprendi com os erros de escopo do Limpar e deixei os testes com jogadores guiarem o que melhorar.",
+            en: "The game was simple and had little technical difficulty, so the challenge was keeping the scope small and leaving room for polish. I applied what I learned from the scope mistakes in Limpar and let playtests guide what to improve."
+          },
+          resultado: {
+            pt: "Jogo concluído e publicado no itch.io. Os testes com jogadores levaram a mudanças concretas, como um upgrade que remove o tempo de espera entre cliques.",
+            en: "Finished and published on itch.io. Playtests led to concrete changes, such as an upgrade that removes the cooldown between clicks."
+          },
+          aprendizados: [
+            { pt: "O poder do playtesting: ver a reação dos jogadores mostrou onde polir o jogo.", en: "The power of playtesting: watching players react showed where to polish the game." },
+            { pt: "Uso do GitHub para versionar o projeto em equipe.", en: "Using GitHub to version the project as a team." },
+            { pt: "Controle de escopo, graças ao que aprendi no Limpar.", en: "Scope control, thanks to what I learned from Limpar." }
+          ],
+          tags: ["Godot", "GDScript", "2D"],
           destaque: true,
           midia: [
             { tipo: "gif", src: "assets/gifs/WorkHarder-Menu.gif", legenda: "Menu" },
             { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
-          links: [{ rotulo: { pt: "Página da Itch.io", en: "Itch.io page" }, url: "https://gozinga.itch.io/work-harder" }]
+          links: [{ rotulo: { pt: "Jogar no itch.io", en: "Play on itch.io" }, url: "https://gozinga.itch.io/work-harder" }],
+          notas: [{ pt: "No itch.io, este jogo está publicado no meu perfil Gozinga.", en: "On itch.io, this game is published on my Gozinga profile." }]
         },
         {
           titulo: { pt: "Protótipo de Jogo de Terror", en: "Horror Game Prototype" },
@@ -73,32 +134,67 @@ window.SITE = {
         {
           titulo: "Limpar",
           resumo: { pt: "Um jogo de terror onde tem que coletar peças para um robô!", en: "A horror game where you collect parts for a robot!" },
-          descricao: [{
-            pt: "Este jogo foi desenvolvido para a Scream Jam, alcançando o 26º lugar na categoria Criatividade. Além disso, entre 930 jogos participantes, conquistamos a 316ª posição no ranking geral. Como reconhecimento adicional, um dos participantes da Jam chegou a gravar um vídeo jogando nosso jogo e publicá-lo no YouTube! Durante o desenvolvimento, fui responsável pelo Game Design, pela prototipação, pelo Level Design, pela criação dos sprites e por parte do Sound Design. Essa experiência me ensinou sobre a complexidade de gerenciar uma equipe com um prazo limitado, além de reforçar a importância de um bom Level Design para garantir que o jogador consiga navegar pelo ambiente sem se perder ou se frustrar durante a experiência.",
-            en: "This game was made for Scream Jam, placing 26th in the Creativity category. Out of 930 participating games, we ranked 316th overall. As an extra recognition, one of the jam participants even recorded a video playing our game and posted it on YouTube! During development, I was responsible for game design, prototyping, level design, sprite creation and part of the sound design. The experience taught me about the complexity of managing a team on a tight deadline, and reinforced how important good level design is so players can navigate the environment without getting lost or frustrated."
-          }],
-          tags: ["Godot", "GDscript", "2D"],
+          selo: { pt: "26º em Criatividade · Scream Jam", en: "26th in Creativity · Scream Jam" },
+          fatos: [
+            { pt: "Scream Jam", en: "Scream Jam" },
+            { pt: "316º lugar geral entre 930 jogos", en: "316th overall out of 930 games" }
+          ],
+          contexto: {
+            pt: "Um dos primeiros jogos em que trabalhei em equipe e que concluí de verdade, feito para a Scream Jam.",
+            en: "One of the first games I worked on as a team and truly finished, made for Scream Jam."
+          },
+          papel: [
+            { pt: "Prototipação e Game Design, minhas principais responsabilidades.", en: "Prototyping and game design, my main responsibilities." },
+            { pt: "Level Design, criação dos sprites e parte do Sound Design.", en: "Level design, sprite creation and part of the sound design." }
+          ],
+          desafio: {
+            pt: "O maior desafio foi o escopo. O jogo começou como uma experiência com uma história mais profunda, mas decidimos focar em uma jogabilidade mais arcade, inspirada em Slender. Cortar o escopo e enfrentar o scope creep foi o principal ensinamento técnico do projeto.",
+            en: "The biggest challenge was scope. The game started as an experience with a deeper story, but we decided to focus on a more arcade gameplay inspired by Slender. Cutting scope and dealing with scope creep was the main technical lesson of the project."
+          },
+          resultado: {
+            pt: "26º lugar na categoria Criatividade e 316º lugar geral entre 930 jogos. O jogo foi bem recebido na jam, e um participante chegou a gravar um vídeo jogando e publicá-lo no YouTube.",
+            en: "26th place in the Creativity category and 316th overall out of 930 games. The game was well received in the jam, and a participant even recorded a video playing it and posted it on YouTube."
+          },
+          aprendizados: [
+            { pt: "Acerto: o estilo de arte simples facilitou a entrega do jogo.", en: "What worked: the simple art style made it easier to deliver the game." },
+            { pt: "Erro: ruas sem saída tiravam do jogador a chance de criar um plano de fuga e evadir o inimigo sem perder uma vida. Hoje evito becos sem saída no Level Design.", en: "Mistake: dead-end streets took away the player's chance to plan an escape and evade the enemy without losing a life. Now I avoid dead ends in level design." },
+            { pt: "Erro: o cenário precisava de diferenças visuais entre as áreas, para o jogador saber se já passou por ali.", en: "Mistake: the scenery needed visual differences between areas, so players could tell whether they had already been there." },
+            { pt: "Escopo e scope creep: o que aprendi aqui guiou o Work Harder.", en: "Scope and scope creep: what I learned here guided Work Harder." }
+          ],
+          tags: ["Godot", "GDScript", "2D"],
           midia: [
             { tipo: "gif", src: "assets/gifs/Limpar cutscene.gif", legenda: "Cutscene" },
             { tipo: "video", src: "assets/videos/LimparGameplay.mp4", legenda: "Gameplay" },
           ],
-          links: [{ rotulo: { pt: "Página da Itch.io", en: "Itch.io page" }, url: "https://gozinga.itch.io/limpar" }]
+          links: [{ rotulo: { pt: "Jogar no itch.io", en: "Play on itch.io" }, url: "https://gozinga.itch.io/limpar" }
+            // , { rotulo: { pt: "Vídeo de um participante no YouTube", en: "A participant's video on YouTube" }, url: "https://www.youtube.com/watch?v=..." }
+          ],
+          notas: [
+            { pt: "No itch.io, este jogo está publicado no meu perfil Gozinga.", en: "On itch.io, this game is published on my Gozinga profile." },
+            { pt: "Para a melhor experiência, baixe a versão executável: a versão web tem desempenho inferior.", en: "For the best experience, download the executable version: the web version performs worse." }
+          ]
         },
-        
       ]
     },
     {
       tipo: "habilidades",
       titulo: { pt: "Linguagens e ferramentas", en: "Languages and tools" },
-      descricao: { pt: "Em destaque, onde tenho mais facilidade.", en: "Highlighted: where I am most comfortable." },
+      descricao: { pt: "Em destaque, onde tenho mais facilidade. As notas mostram onde usei cada tecnologia.", en: "Highlighted: where I am most comfortable. Notes show where I used each technology." },
       grupos: [
         { nome: { pt: "Linguagens", en: "Languages" }, itens: [
-          { nome: "C#", forte: true }, "Java", "Python" ] },
-        { nome: "Front-end", itens: [
-          { nome: "HTML", nota: { pt: "básico", en: "basic" } }, { nome: "CSS", nota: { pt: "básico", en: "basic" } }, { nome: "JavaScript", nota: { pt: "básico", en: "basic" } },
-          "React", "Node.js", "npm" ] },
+          { nome: "C#", forte: true, nota: "Unity" }, { nome: "GDScript", forte: true, nota: "Godot" } ] },
         { nome: { pt: "Engines de jogos", en: "Game engines" }, itens: [
-          { nome: "Unity", forte: true }, { nome: "Godot", forte: true }, "Unreal Engine 5", "Game Maker Studio 2" ] },
+          { nome: "Unity", forte: true, nota: { pt: "protótipo de terror", en: "horror prototype" } },
+          { nome: "Godot", forte: true, nota: "Work Harder, Limpar" } ] },
+        { nome: { pt: "Versionamento", en: "Version control" }, itens: [
+          { nome: "GitHub", nota: { pt: "projetos em equipe", en: "team projects" } } ] },
+        { nome: { pt: "Web (complementar)", en: "Web (supporting)" }, itens: [
+          { nome: "HTML", nota: { pt: "básico", en: "basic" } }, { nome: "CSS", nota: { pt: "básico", en: "basic" } }, { nome: "JavaScript", nota: { pt: "básico", en: "basic" } },
+          "React",
+          { nome: "Node.js", nota: { pt: "ambiente de execução JS", en: "JS runtime" } },
+          { nome: "npm", nota: { pt: "gerenciador de pacotes", en: "package manager" } } ] },
+        { nome: { pt: "Conhecimento de base", en: "Foundational knowledge" }, itens: [
+          "Java", "Python", "Unreal Engine 5", "Game Maker Studio 2" ] },
         { nome: "IDEs", itens: [ "VS Code", "Visual Studio", "IntelliJ" ] }
       ]
     },
@@ -106,19 +202,22 @@ window.SITE = {
       tipo: "educacao",
       titulo: { pt: "Educação", en: "Education" },
       itens: [
-        { instituicao: "Motiva", curso: { pt: "Colégio", en: "School" } },
-        { instituicao: "Uniesp", curso: { pt: "Ciência da Computação", en: "Computer Science" }, atual: true }
-        // campos opcionais: periodo: "2020 a 2023", descricao: { pt: "...", en: "..." }, midia: [ ... ]
+        { instituicao: "Uniesp", curso: { pt: "Ciência da Computação", en: "Computer Science" },
+          periodo: { pt: "2025 – 2029 (previsão de conclusão)", en: "2025 – 2029 (expected graduation)" }, atual: true },
+        { instituicao: "Motiva", curso: { pt: "Colégio", en: "School" }, secundario: true }
+        // campos opcionais: descricao: { pt: "...", en: "..." }, midia: [ ... ]
       ]
     },
     {
       tipo: "contato",
       titulo: { pt: "Contato", en: "Contact" },
-      descricao: { pt: "Interessado? Fale comigo por um destes canais!", en: "Interested? Get in touch through any of these channels!" },
+      descricao: { pt: "Estou buscando estágio em desenvolvimento de jogos. Fale comigo por um destes canais!", en: "I am looking for a game development internship. Get in touch through any of these channels!" },
       itens: [
         { rotulo: "LinkedIn", valor: "linkedin.com/in/arthur-carneiro-maciel", url: "https://www.linkedin.com/in/arthur-carneiro-maciel/" },
         { rotulo: "Gmail", valor: "arthurcarmac@gmail.com", url: "mailto:arthurcarmac@gmail.com" },
-        { rotulo: "Celular", valor: "+55 (83) 9 9344-6500", url: "tel:+5583993446500" }
+        { rotulo: "GitHub", valor: "github.com/arthurcmac", url: "https://github.com/arthurcmac" },
+        { rotulo: "itch.io", valor: "gozinga.itch.io", url: "https://gozinga.itch.io" },
+        { rotulo: { pt: "Celular", en: "Phone" }, valor: "+55 (83) 9 9344-6500", url: "tel:+5583993446500" }
       ]
     }
   ]

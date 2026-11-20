@@ -14,7 +14,9 @@
   /* Texto traduzível: string simples ou { pt: "...", en: "..." } */
   const L = (v) => (v && typeof v === "object" && !Array.isArray(v) && ("pt" in v || "en" in v) ? (v[lang] ?? v.pt ?? v.en) : v);
   const list = (v) => [].concat(L(v) ?? []).map(L);
+  const tem = (v) => !!(v && list(v).length);
   const u = (k) => L(S.ui[k]);
+  const ext = (url) => /^https?:/.test(url);
 
   const h = (tag, attrs = {}, ...kids) => {
     const el = document.createElement(tag);
@@ -31,6 +33,10 @@
   const vazio = (txt, src, cls = "") => h("div", { class: "vazio " + cls }, h("span", { text: txt }), src && h("code", { text: src }));
   const tags = (t) => (t && t.length ? h("ul", { class: "tags" }, t.map((x) => h("li", { text: L(x) }))) : null);
   const grade = (ms) => (ms && ms.length ? h("div", { class: "grade" }, ms.map((m) => midia(m))) : null);
+  const paras = (v) => list(v).map((t) => h("p", { text: t }));
+  const pontos = (v) => h("ul", { class: "pontos" }, list(v).map((t) => h("li", { text: t })));
+  const bloco = (k, corpo) => h("section", { class: "bloco" }, h("h4", { text: u(k) }), corpo);
+  const btn = (a, principal) => h("a", { class: "btn" + (principal ? " btn--principal" : ""), href: a.url, target: ext(a.url) ? "_blank" : null, rel: ext(a.url) ? "noopener" : null, download: a.download ? true : null, text: L(a.rotulo) });
 
   /* Mídia: imagem, gif, video (arquivo) e youtube */
   function midia(m, capa) {
@@ -54,14 +60,18 @@
   document.body.append(dlg);
   dlg.addEventListener("click", (e) => e.target === dlg && dlg.close());
   dlg.addEventListener("close", () => dlg.replaceChildren());
+  const SEC = [["contexto", paras], ["papel", pontos], ["equipe", pontos], ["desafio", paras], ["resultado", paras], ["aprendizados", pontos]];
   function abrir(p) {
-    const links = p.links || [];
+    const links = p.links || [], estruturado = SEC.some(([k]) => tem(p[k]));
     dlg.replaceChildren(h("div", { class: "detalhe__corpo" },
       h("button", { class: "fechar", type: "button", text: u("fechar"), onclick: () => dlg.close() }),
       h("h3", { text: L(p.titulo) }),
+      p.selo && h("p", { class: "selo", text: L(p.selo) }),
       tags(p.tags),
-      list(p.descricao || p.resumo).map((t) => h("p", { text: t })),
-      links.length ? h("p", { class: "links" }, links.map((l) => h("a", { href: l.url, target: "_blank", rel: "noopener", text: L(l.rotulo) }))) : null,
+      tem(p.fatos) && h("ul", { class: "fatos" }, list(p.fatos).map((t) => h("li", { text: t }))),
+      links.length ? h("p", { class: "links" }, links.map((l, i) => btn(l, i === 0))) : null,
+      list(p.notas).map((t) => h("p", { class: "nota", text: t })),
+      estruturado ? SEC.map(([k, fn]) => tem(p[k]) && bloco(k, fn(p[k]))) : paras(p.descricao || p.resumo),
       (p.midia || []).map((m) => midia(m))));
     dlg.showModal();
   }
@@ -71,6 +81,7 @@
     return h("article", { class: "projeto" + (p.destaque ? " projeto--destaque" : "") },
       h("div", { class: "projeto__midia" }, capa ? midia(capa, true) : vazio(titulo[0], null, "vazio--ini")),
       h("div", { class: "projeto__corpo" },
+        p.selo && h("p", { class: "selo", text: L(p.selo) }),
         h("h3", {}, h("button", { class: "projeto__abrir", type: "button", text: titulo, onclick: () => abrir(p) })),
         h("p", { text: L(p.resumo) }),
         tags(p.tags)));
@@ -84,8 +95,8 @@
         const o = typeof i === "string" ? { nome: i } : i;
         return h("li", { class: "chip", "data-forte": o.forte }, L(o.nome), L(o.nota) && h("small", { text: L(o.nota) }));
       }))))),
-    educacao: (s) => h("ol", { class: "linha" }, s.itens.map((i) => h("li", { class: "linha__item", "data-atual": i.atual },
-      h("p", { class: "linha__quando", text: L(i.periodo) || (i.atual ? u("andamento") : "") }),
+    educacao: (s) => h("ol", { class: "linha" }, s.itens.map((i) => h("li", { class: "linha__item", "data-atual": i.atual, "data-sec": i.secundario },
+      h("p", { class: "linha__quando", text: [L(i.periodo), i.atual && u("andamento")].filter(Boolean).join(" · ") }),
       h("h3", { text: L(i.instituicao) }),
       i.curso && h("p", { class: "linha__curso", text: L(i.curso) }),
       i.descricao && h("p", { text: L(i.descricao) }),
@@ -93,7 +104,7 @@
     texto: (s) => h("div", { class: "texto" }, list(s.texto).map((t) => h("p", { text: t })), grade(s.midia)),
     galeria: (s) => grade(s.midia),
     contato: (s) => h("ul", { class: "contatos" }, s.itens.map((i) => h("li", {},
-      h("a", { class: "contato", href: i.url, target: /^https?:/.test(i.url) ? "_blank" : null, rel: "noopener" },
+      h("a", { class: "contato", href: i.url, target: ext(i.url) ? "_blank" : null, rel: "noopener" },
         h("span", { class: "contato__nome", text: L(i.rotulo) }), i.valor && h("span", { class: "contato__valor", text: L(i.valor) })))))
   };
 
@@ -110,11 +121,20 @@
     const fotoBox = h("div", { class: "foto" }, foto);
     foto.addEventListener("error", () => fotoBox.replaceChildren(h("span", { class: "foto__ini", "aria-hidden": "true", text: ini(P.nome) })));
 
+    const infos = P.infos || [];
     const secoes = S.secoes.filter((s) => R[s.tipo] || console.warn("Tipo de seção desconhecido:", s.tipo));
     main.replaceChildren(
       h("section", { class: "hero wrap" }, fotoBox,
-        h("div", { class: "hero__txt" }, h("h1", { text: P.nome }), h("p", { class: "hero__funcao", text: L(P.funcao) }),
-          h("h2", { class: "hero__sobre", text: u("sobre") }), list(P.sobre).map((t) => h("p", { text: t })))),
+        h("div", { class: "hero__txt" },
+          h("h1", { text: P.nome }),
+          h("p", { class: "hero__funcao", text: L(P.funcao) }),
+          P.objetivo && h("p", { class: "objetivo", text: L(P.objetivo) }),
+          h("h2", { class: "hero__sobre", text: u("sobre") }),
+          list(P.sobre).map((t) => h("p", { text: t })),
+          infos.length ? h("dl", { class: "infos" }, infos.flatMap((i) => [h("dt", { text: L(i.rotulo) }), h("dd", { text: L(i.valor) })])) : null,
+          (P.acoes || []).length ? h("div", { class: "cta" }, P.acoes.map((a) => btn(a, a.principal))) : null,
+          (P.apelidos || []).map((a) => h("p", { class: "apelido" }, u("apelido").replace("{plataforma}", a.plataforma),
+            h("a", { href: a.url, target: "_blank", rel: "noopener", text: a.nome }))))),
       ...secoes.map((s) => h("section", { class: "secao wrap", id: s.id, "aria-labelledby": s.id + "-t" },
         h("div", { class: "secao__cab" }, h("h2", { id: s.id + "-t", text: L(s.titulo) }), s.descricao && h("p", { text: L(s.descricao) })),
         h("div", { class: "secao__corpo" }, R[s.tipo](s)))));
