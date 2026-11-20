@@ -141,12 +141,14 @@ window.SITE = {
             { pt: "316º lugar geral entre 930 jogos", en: "316th overall out of 930 games" }
           ],
           descricao: {
-            pt: "Um dos primeiros jogos em que trabalhei em equipe e que concluí de verdade, feito para a Scream Jam.",
-            en: "One of the first games I worked on as a team and truly finished, made for Scream Jam."
+            pt: "Um dos primeiros jogos em que trabalhei em equipe e que concluí de verdade, feito para a Scream Jam. Esse jogo Me ensinou bastante sobre Escopo, Game Design, e colaboração em equipe.",
+            en: "One of the first games I worked on as a team and truly finished, made for Scream Jam. This game taught me a lot about scope, game design, and team collaboration."
           },
           papel: [
-            { pt: "Prototipação e Game Design, minhas principais responsabilidades.", en: "Prototyping and game design, my main responsibilities." },
-            { pt: "Level Design, criação dos sprites e parte do Sound Design.", en: "Level design, sprite creation and part of the sound design." }
+            { pt: "Prototipação e Game Design.", en: "Prototyping and Game Design." },
+            { pt: "Level Design.", en: "Level Design" },
+            { pt: "Criação dos sprites.", en: "Sprite creation." },
+            { pt: "Sound Design.", en: "Sound Design." },
           ],
           desafio: {
             pt: "O maior desafio foi o escopo. O jogo começou como uma experiência com uma história mais profunda, mas decidimos focar em uma jogabilidade mais arcade, inspirada em Slender. Cortar o escopo e enfrentar o scope creep foi o principal ensinamento técnico do projeto.",
