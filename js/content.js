@@ -82,7 +82,7 @@ window.SITE = {
             { pt: "Game jam com o streamer Felps como principal host", en: "Game jam hosted mainly by the streamer Felps" },
             { pt: "Equipe de 4 pessoas", en: "Team of 4" }
           ],
-          descricao: [{
+          contexto: [{
             pt: "Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado.",
             en: "This game was made during FelpoJam, a game jam hosted mainly by Felps, a well-known Brazilian streamer. During the event, I was responsible for game design, prototyping and team management. The experience taught me a lot about using GitHub for version control, and gave me valuable lessons in collaboration and teamwork under a tight deadline."
           }],
