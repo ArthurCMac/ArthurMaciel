@@ -182,10 +182,15 @@ window.SITE = {
       descricao: { pt: "Em destaque, onde tenho mais facilidade. As notas mostram onde usei cada tecnologia.", en: "Highlighted: where I am most comfortable. Notes show where I used each technology." },
       grupos: [
         { nome: { pt: "Linguagens", en: "Languages" }, itens: [
-          { nome: "C#", forte: true, nota: "Unity" }, { nome: "GDScript", forte: true, nota: "Godot" } ] },
+          { nome: "C#", forte: true, nota: "Unity" },
+          { nome: "GDScript", forte: true, nota: "Godot" },
+          "Java",
+          "Python" ] },
         { nome: { pt: "Engines de jogos", en: "Game engines" }, itens: [
           { nome: "Unity", forte: true, nota: { pt: "protótipo de terror", en: "horror prototype" } },
-          { nome: "Godot", forte: true, nota: "Work Harder, Limpar" } ] },
+          { nome: "Godot", forte: true, nota: "Work Harder, Limpar" },
+          "Unreal Engine 5",
+          "Game Maker Studio 2" ] },
         { nome: { pt: "Versionamento", en: "Version control" }, itens: [
           { nome: "GitHub", nota: { pt: "projetos em equipe", en: "team projects" } } ] },
         { nome: { pt: "Web (complementar)", en: "Web (supporting)" }, itens: [
@@ -193,8 +198,6 @@ window.SITE = {
           "React",
           { nome: "Node.js", nota: { pt: "ambiente de execução JS", en: "JS runtime" } },
           { nome: "npm", nota: { pt: "gerenciador de pacotes", en: "package manager" } } ] },
-        { nome: { pt: "Conhecimento de base", en: "Foundational knowledge" }, itens: [
-          "Java", "Python", "Unreal Engine 5", "Game Maker Studio 2" ] },
         { nome: "IDEs", itens: [ "VS Code", "Visual Studio", "IntelliJ" ] }
       ]
     },
