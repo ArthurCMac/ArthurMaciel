@@ -60,7 +60,7 @@
   document.body.append(dlg);
   dlg.addEventListener("click", (e) => e.target === dlg && dlg.close());
   dlg.addEventListener("close", () => dlg.replaceChildren());
-  const SEC = [["contexto", paras], ["papel", pontos], ["equipe", pontos], ["desafio", paras], ["resultado", paras], ["aprendizados", pontos]];
+  const SEC = [["descricao", paras], ["papel", pontos], ["equipe", pontos], ["desafio", paras], ["resultado", paras], ["aprendizados", pontos]];
   function abrir(p) {
     const links = p.links || [], estruturado = SEC.some(([k]) => tem(p[k]));
     dlg.replaceChildren(h("div", { class: "detalhe__corpo" },

@@ -7,7 +7,7 @@
    Se faltar o "en", o site mostra o texto em português.
 
    CAMPOS DE UM PROJETO (todos opcionais, exceto titulo e resumo):
-     selo, fatos[], links[], notas[], contexto, papel[], equipe[],
+     selo, fatos[], links[], notas[], descricao, papel[], equipe[],
      desafio, resultado, aprendizados[], midia[], tags[]
    Sem nenhum dos campos de texto detalhado, usa-se "descricao".
    ============================================================ */
@@ -27,7 +27,7 @@ window.SITE = {
     temaClaro: { pt: "Tema claro", en: "Light theme" },
     outroIdioma: { pt: "English", en: "Português" },
     apelido: { pt: "Meu perfil no {plataforma}: ", en: "My {plataforma} profile: " },
-    contexto: { pt: "Contexto", en: "Context" },
+    descricao: { pt: "Descrição", en: "Description" },
     papel: { pt: "Minha participação", en: "My contribution" },
     equipe: { pt: "Contribuição da equipe", en: "Team contribution" },
     desafio: { pt: "Desafio e solução", en: "Challenge and solution" },
@@ -82,7 +82,7 @@ window.SITE = {
             { pt: "Game jam com o streamer Felps como principal host", en: "Game jam hosted mainly by the streamer Felps" },
             { pt: "Equipe de 4 pessoas", en: "Team of 4" }
           ],
-          contexto: [{
+          descricao: [{
             pt: "Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado.",
             en: "This game was made during FelpoJam, a game jam hosted mainly by Felps, a well-known Brazilian streamer. During the event, I was responsible for game design, prototyping and team management. The experience taught me a lot about using GitHub for version control, and gave me valuable lessons in collaboration and teamwork under a tight deadline."
           }],
@@ -140,7 +140,7 @@ window.SITE = {
             { pt: "Scream Jam · 7 dias", en: "Scream Jam · 7 days" },
             { pt: "316º lugar geral entre 930 jogos", en: "316th overall out of 930 games" }
           ],
-          contexto: {
+          descricao: {
             pt: "Um dos primeiros jogos em que trabalhei em equipe e que concluí de verdade, feito para a Scream Jam.",
             en: "One of the first games I worked on as a team and truly finished, made for Scream Jam."
           },
