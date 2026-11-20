@@ -82,31 +82,32 @@ window.SITE = {
             { pt: "Game jam com o streamer Felps como principal host", en: "Game jam hosted mainly by the streamer Felps" },
             { pt: "Equipe de 4 pessoas", en: "Team of 4" }
           ],
-          contexto: {
-            pt: "Jogo desenvolvido durante a FelpoJam, uma game jam que teve o streamer brasileiro Felps como principal host. O prazo foi de 11 dias, com uma equipe de 4 pessoas.",
-            en: "Made during FelpoJam, a game jam hosted mainly by the Brazilian streamer Felps. We had 11 days and a team of 4 people."
-          },
+          descricao: [{
+            pt: "Esse jogo foi desenvolvido durante a FelpoJam, uma Game Jam que teve como principal host Felps, um grande streamer brasileiro. Durante o evento, fui responsável pelo Game Design, pela prototipação e pela gestão da equipe. Essa experiência me ensinou bastante sobre o uso do GitHub para o versionamento do projeto, além de me proporcionar um aprendizado importante sobre colaboração e trabalho em equipe dentro de um prazo limitado.",
+            en: "This game was made during FelpoJam, a game jam hosted mainly by Felps, a well-known Brazilian streamer. During the event, I was responsible for game design, prototyping and team management. The experience taught me a lot about using GitHub for version control, and gave me valuable lessons in collaboration and teamwork under a tight deadline."
+          }],
           papel: [
             { pt: "Game Design e gestão da equipe.", en: "Game design and team management." },
             { pt: "Criei a mecânica base do clicker.", en: "I built the core clicker mechanic." },
-            { pt: "Criei a base do sistema de upgrades, ou seja, fiz o protótipo do jogo, que depois foi polido por um colega.", en: "I built the foundation of the upgrade system, which means I made the game's prototype, later polished by a teammate." }
+            { pt: "Criei a base do sistema de upgrades.", en: "I built the foundation of the upgrade system" }
           ],
           equipe: [
-            { pt: "Um colega de programação melhorou o sistema de upgrades, adicionou mais conteúdo e fez a cutscene.", en: "A programming teammate improved the upgrade system, added more content and made the cutscene." },
-            { pt: "Os outros dois membros fizeram a arte (carimbo, animação do player e sprites do papel) e a música.", en: "The other two members made the art (stamp, player animation and paper sprites) and the music." }
+            { pt: "Meu colega (), estava também responsável pela programação e ajudou a polir as mecânicas bases, adicionando mais conteúdo. Além disso, ficou responsável por fazer a cutscene.", en: "A programming teammate improved the upgrade system, added more content and made the cutscene." },
+            { pt: "Minha Colega (), estava responsável pela a arte do jogo, desde da animação do player carimbando, até para a criação dos sprites 2D desenhados", en: "My teammate was responsible for the game's art, from the player's stamping animation to the creation of the 2D sprites." },
+            { pt: "Meu colega (), ficou responsável pela música do jogo.", en: "My teammate was responsible for the game's music." },
           ],
           desafio: {
             pt: "O jogo era simples e quase sem dificuldade técnica, então o desafio foi manter o escopo pequeno e deixar espaço para polimento. Usei o que aprendi com os erros de escopo do Limpar e deixei os testes com jogadores guiarem o que melhorar.",
             en: "The game was simple and had little technical difficulty, so the challenge was keeping the scope small and leaving room for polish. I applied what I learned from the scope mistakes in Limpar and let playtests guide what to improve."
           },
           resultado: {
-            pt: "Jogo concluído e publicado no itch.io. Os testes com jogadores levaram a mudanças concretas, como um upgrade que remove o tempo de espera entre cliques.",
-            en: "Finished and published on itch.io. Playtests led to concrete changes, such as an upgrade that removes the cooldown between clicks."
+            pt: "Os Playtests levaram a mudanças concretas, como um upgrade que remove o tempo de espera entre cliques.",
+            en: "Playtests led to concrete changes, such as an upgrade that removes the wait time between clicks."
           },
           aprendizados: [
             { pt: "O poder do playtesting: ver a reação dos jogadores mostrou onde polir o jogo.", en: "The power of playtesting: watching players react showed where to polish the game." },
             { pt: "Uso do GitHub para versionar o projeto em equipe.", en: "Using GitHub to version the project as a team." },
-            { pt: "Controle de escopo, graças ao que aprendi no Limpar.", en: "Scope control, thanks to what I learned from Limpar." }
+            { pt: "Controle de escopo.", en: "Scope control." }
           ],
           tags: ["Godot", "GDScript", "2D"],
           destaque: true,
@@ -115,7 +116,7 @@ window.SITE = {
             { tipo: "video", src: "assets/videos/WorkHarder-Gameplay.mp4", legenda: "Gameplay" },
           ],
           links: [{ rotulo: { pt: "Jogar no itch.io", en: "Play on itch.io" }, url: "https://gozinga.itch.io/work-harder" }],
-          notas: [{ pt: "No itch.io, este jogo está publicado no meu perfil Gozinga.", en: "On itch.io, this game is published on my Gozinga profile." }]
+          
         },
         {
           titulo: { pt: "Protótipo de Jogo de Terror", en: "Horror Game Prototype" },
@@ -170,7 +171,7 @@ window.SITE = {
             // , { rotulo: { pt: "Vídeo de um participante no YouTube", en: "A participant's video on YouTube" }, url: "https://www.youtube.com/watch?v=..." }
           ],
           notas: [
-            { pt: "No itch.io, este jogo está publicado no meu perfil Gozinga.", en: "On itch.io, this game is published on my Gozinga profile." },
+            
             { pt: "Para a melhor experiência, baixe a versão executável: a versão web tem desempenho inferior.", en: "For the best experience, download the executable version: the web version performs worse." }
           ]
         },
